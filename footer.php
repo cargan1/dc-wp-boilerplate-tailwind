@@ -6,8 +6,8 @@
 
   <footer class="Footer" role="contentinfo">
 
-    <p>Theme by <a href="https://lukeharvey.co.uk/" rel="designer noopener" target="_blank">Luke Harvey</a></p>
-    <!-- <p>&copy; <a href="http://lukeharvey.co.uk/" rel="designer noopener" target="_blank">Luke Harvey</a> <?php echo date("Y") ?></p> -->
+    <p>Theme by <a href="https://cargan.dk/" rel="designer noopener" target="_blank">Daniel Cargan</a></p>
+    <!-- <p>&copy; <a href="https://cargan.dk/" rel="designer noopener" target="_blank">Daniel Cargan</a> <?php echo date("Y") ?></p> -->
 
   </footer>
 

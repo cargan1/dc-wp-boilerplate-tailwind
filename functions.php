@@ -11,7 +11,7 @@
  * as indicating support for post thumbnails.
  */
 
-function lh_setup() {
+function dc_setup() {
 
   /**
    * Add default posts and comments RSS feed links to head.
@@ -53,8 +53,8 @@ function lh_setup() {
    */
 
   register_nav_menus( array(
-    'header' => esc_html__( 'Header Menu', 'lh' ),
-    // 'footer' => esc_html__( 'Footer Menu', 'lh' ),
+    'header' => esc_html__( 'Header Menu', 'dc' ),
+    // 'footer' => esc_html__( 'Footer Menu', 'dc' ),
   ) );
 
   /**
@@ -93,7 +93,7 @@ function lh_setup() {
    * Set up the WordPress core custom background feature.
    */
 
-  // add_theme_support( 'custom-background', apply_filters( '_lh_custom_background_args', array(
+  // add_theme_support( 'custom-background', apply_filters( '_dc_custom_background_args', array(
   //   'default-color' => 'ffffff',
   //   'default-image' => '',
   // ) ) );
@@ -105,7 +105,7 @@ function lh_setup() {
   // add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
-add_action( 'after_setup_theme', 'lh_setup' );
+add_action( 'after_setup_theme', 'dc_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -115,21 +115,21 @@ add_action( 'after_setup_theme', 'lh_setup' );
  * @global int $content_width
  */
 
-function lh_content_width() {
-  $GLOBALS['content_width'] = apply_filters( '_lh_content_width', 640 );
+function dc_content_width() {
+  $GLOBALS['content_width'] = apply_filters( '_dc_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'lh_content_width', 0 );
+add_action( 'after_setup_theme', 'dc_content_width', 0 );
 
 /**
  * Register additional image sizes in Add Media modal
  */
 
-// function lh_custom_image_sizes( $sizes ) {
+// function dc_custom_image_sizes( $sizes ) {
 //   return array_merge( $sizes, array(
 //     'extra_large' => __( 'Extra Large' ),
 //   ) );
 // }
-// add_filter( 'image_size_names_choose', 'lh_custom_image_sizes' );
+// add_filter( 'image_size_names_choose', 'dc_custom_image_sizes' );
 
 /**
  * Register widget area.
@@ -137,9 +137,9 @@ add_action( 'after_setup_theme', 'lh_content_width', 0 );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 
-function lh_widgets_init() {
+function dc_widgets_init() {
   register_sidebar( array(
-    'name'          => esc_html__( 'Sidebar', 'lh' ),
+    'name'          => esc_html__( 'Sidebar', 'dc' ),
     'id'            => 'sidebar-1',
     'description'   => '',
     'before_widget' => '<aside id="%1$s" class="Widget %2$s">',
@@ -148,13 +148,13 @@ function lh_widgets_init() {
     'after_title'   => '</h1>',
   ) );
 }
-add_action( 'widgets_init', 'lh_widgets_init' );
+add_action( 'widgets_init', 'dc_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
 
-function lh_scripts() {
+function dc_scripts() {
 
   /**
    * Enable cache busting of enqueued css and javascript
@@ -181,7 +181,7 @@ function lh_scripts() {
     //   wp_enqueue_script( 'comment-reply' );
     // }
 }
-add_action( 'wp_enqueue_scripts', 'lh_scripts' );
+add_action( 'wp_enqueue_scripts', 'dc_scripts' );
 
 /**
  * Disable file editing within 'wp-admin' completely (good for security)

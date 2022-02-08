@@ -9,7 +9,7 @@
  * @param int $img_id Image ID.
  */
 
-function lh_image_ratio($img_id) {
+function dc_image_ratio($img_id) {
   $img_data = wp_get_attachment_image_src( $img_id, 'original' );
   $img_width = $img_data[1];
   $img_height = $img_data[2];
@@ -22,7 +22,7 @@ function lh_image_ratio($img_id) {
  * Add lazyloading markup to responsive images.
  */
 
-function lh_lazy_images( $attr ) {
+function dc_lazy_images( $attr ) {
   if ($attr['class'] == 'lazyload') {
     $attr['data-src'] = $attr['src'];
     $attr['src'] = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
@@ -37,8 +37,8 @@ function lh_lazy_images( $attr ) {
 
   return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'lh_lazy_images', 10, 2 );
-add_filter( 'post_thumbmnail_html', 'lh_lazy_images', 10, 2 );
+add_filter( 'wp_get_attachment_image_attributes', 'dc_lazy_images', 10, 2 );
+add_filter( 'post_thumbmnail_html', 'dc_lazy_images', 10, 2 );
 
 /**
  * Move jQuery to the HTML footer.
@@ -46,7 +46,7 @@ add_filter( 'post_thumbmnail_html', 'lh_lazy_images', 10, 2 );
  * see https://peterwilson.cc/code-samples/load-jquery-in-the-wordpress-footer/
  */
 
-function lh_jquery_to_footer( &$wp_scripts ) {
+function dc_jquery_to_footer( &$wp_scripts ) {
 
   if ( is_admin() ) {
     return;
@@ -57,4 +57,4 @@ function lh_jquery_to_footer( &$wp_scripts ) {
   $wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
 
 }
-add_action( 'wp_default_scripts', 'lh_jquery_to_footer' );
+add_action( 'wp_default_scripts', 'dc_jquery_to_footer' );

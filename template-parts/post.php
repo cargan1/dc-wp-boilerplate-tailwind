@@ -9,7 +9,7 @@
     <?php the_title( sprintf( '<h1 class="Post-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
     <div class="Post-meta">
-      <?php lh_posted_on(); ?>
+      <?php dc_posted_on(); ?>
     </div>
   </header>
 
@@ -25,7 +25,7 @@
   </div>
 
   <footer class="Post-footer">
-    <?php lh_post_footer(); ?>
+    <?php dc_post_footer(); ?>
   </footer>
 
 </article><!-- .Post -->

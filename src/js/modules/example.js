@@ -4,7 +4,6 @@
 
 console.log("Hello, world!");
 
-console.log("efefef");
 // var Example = (function($) {
 
 //   function initExample() {
