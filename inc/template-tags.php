@@ -43,7 +43,7 @@ function dc_post_footer() {
   if ( 'post' == get_post_type() ) {
     /* translators: used between list items, there is a space after the comma */
     $categories_list = get_the_category_list( esc_html__( ', ', 'lh' ) );
-    if ( $categories_list && _dc_categorized_blog() ) {
+    if ( $categories_list && dc_categorized_blog() ) {
       printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'lh' ) . '</span>', $categories_list );
     }
 
@@ -81,10 +81,10 @@ function dc_categorized_blog() {
   }
 
   if ( $all_the_cool_cats > 1 ) {
-    // This blog has more than 1 category so _dc_categorized_blog should return true.
+    // This blog has more than 1 category so dc_categorized_blog should return true.
     return true;
   } else {
-    // This blog has only 1 category so _dc_categorized_blog should return false.
+    // This blog has only 1 category so dc_categorized_blog should return false.
     return false;
   }
 }
